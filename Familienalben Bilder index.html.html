@@ -12,240 +12,85 @@
 </body>
 
 </html>
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Familien-Alben</title>
-    <style>
-        /* Allgemeines Styling */
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f4ec;
-            color: #333;
-        }
-        h1 {
-            margin: 20px;
-            font-size: 2.5rem;
-            color: #5a4f3c;
-            text-align: center;
-        }
-        p {
-            font-size: 1rem;
-            color: #7f7c70;
-            text-align: center;
-        }
-
-        /* Album-Formular */
-        #albumForm, #uploadForm {
-            margin: 20px auto;
-            padding: 20px;
-            border-radius: 10px;
-            background-color: #fffaf3;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
-            text-align: center;
-        }
-        input[type="text"], select, input[type="file"], button {
-            display: block;
-            width: calc(100% - 40px);
-            margin: 10px auto;
-            padding: 10px;
-            font-size: 1rem;
-            border: 2px solid #d3c9b7;
-            border-radius: 8px;
-            outline: none;
-            background-color: #faf5ee;
-        }
-        button {
-            background-color: #c8a97e;
-            color: white;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        button:hover {
-            background-color: #b08665;
-        }
-
-        /* Galerie */
-        #albums {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            padding: 20px;
-        }
-        .album {
-            border: 2px solid #d3c9b7;
-            border-radius: 10px;
-            background-color: #fffaf3;
-            padding: 10px;
-            width: 250px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .album h3 {
-            color: #5a4f3c;
-            margin: 0 0 10px;
-            font-size: 1.2rem;
-        }
-        .album .photos {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-        }
-        .album .photos .photo {
-            width: 70px;
-            height: 70px;
-            border-radius: 5px;
-            overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .album .photos .photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-    </style>
+    <title>Klare Politik</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Familien-Alben</h1>
-    <p>Lade deine Erinnerungen hoch und ordne sie Alben zu!</p>
+    <header>
+        <div class="logo">
+            <h1>Klare Politik</h1>
+            <p>Politik einfach erklärt für Jugendliche</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#about">Über uns</a></li>
+                <li><a href="#topics">Themen</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- Formular für Album erstellen -->
-    <div id="albumForm">
-        <input type="text" id="albumName" placeholder="Name des Albums" required>
-        <button id="createAlbumButton">Album erstellen</button>
-    </div>
+    <main>
+        <section id="hero">
+            <h2>Dein Guide zu Demokratie, Gerechtigkeit und politischer Aufklärung</h2>
+            <a href="#topics" class="button">Jetzt mehr erfahren</a>
+        </section>
 
-    <!-- Formular für Bild-Upload -->
-    <div id="uploadForm">
-        <input type="file" id="fileInput" accept="image/*" multiple>
-        <button id="uploadButton">Bilder hochladen</button>
-    </div>
+        <section id="about">
+            <h3>Über uns</h3>
+            <p>
+                Wir erklären politische Begriffe, Prozesse und Aussagen verständlich und anschaulich.
+                Unser Ziel ist es, Jugendliche für Politik zu begeistern und komplexe Themen zugänglich zu machen.
+            </p>
+        </section>
 
-    <!-- Formular für Bild in Album verschieben -->
-    <div id="moveForm" style="display: none;">
-        <select id="albumSelect">
-            <option disabled selected>Wähle ein Album</option>
-        </select>
-        <button id="moveButton">Bilder ins Album verschieben</button>
-    </div>
+        <section id="topics">
+            <h3>Themen</h3>
+            <div class="topics-grid">
+                <div class="topic">
+                    <h4>Fairness-Abkommen</h4>
+                    <p>Was bedeutet Fairness in der Politik?</p>
+                    <a href="#" class="button">Mehr erfahren</a>
+                </div>
+                <div class="topic">
+                    <h4>Schuldenbremse</h4>
+                    <p>Wie funktioniert die Schuldenbremse?</p>
+                    <a href="#" class="button">Mehr erfahren</a>
+                </div>
+                <div class="topic">
+                    <h4>Lebensmittelpreise</h4>
+                    <p>Warum steigen die Preise?</p>
+                    <a href="#" class="button">Mehr erfahren</a>
+                </div>
+            </div>
+        </section>
 
-    <!-- Alben -->
-    <div id="albums"></div>
+        <section id="contact">
+            <h3>Kontakt</h3>
+            <p>Hast du Fragen oder Vorschläge? Schreib uns eine Nachricht!</p>
+            <form action="#" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
 
-    <script>
-        // DOM-Elemente
-        const albumNameInput = document.getElementById("albumName");
-        const createAlbumButton = document.getElementById("createAlbumButton");
-        const albumSelect = document.getElementById("albumSelect");
-        const fileInput = document.getElementById("fileInput");
-        const uploadButton = document.getElementById("uploadButton");
-        const moveForm = document.getElementById("moveForm");
-        const moveButton = document.getElementById("moveButton");
-        const albumsContainer = document.getElementById("albums");
+                <label for="email">E-Mail:</label>
+                <input type="email" id="email" name="email" required>
 
-        let albums = [];
-        let uploadedPhotos = [];
+                <label for="message">Nachricht:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
 
-        // Funktion, um ein neues Album zu erstellen
-        createAlbumButton.addEventListener("click", () => {
-            const albumName = albumNameInput.value.trim();
-            if (albumName !== "") {
-                const newAlbum = {
-                    name: albumName,
-                    photos: []
-                };
-                albums.push(newAlbum);
-                updateAlbums();
-                albumNameInput.value = ""; // Eingabefeld zurücksetzen
-            } else {
-                alert("Bitte gib einen Albumnamen ein.");
-            }
-        });
+                <button type="submit">Absenden</button>
+            </form>
+        </section>
+    </main>
 
-        // Funktion, um die Alben und die Album-Auswahl zu aktualisieren
-        function updateAlbums() {
-            // Album-Auswahl Dropdown aktualisieren
-            albumSelect.innerHTML = '<option disabled selected>Wähle ein Album</option>';
-            albums.forEach((album, index) => {
-                const option = document.createElement("option");
-                option.textContent = album.name;
-                option.value = index;
-                albumSelect.appendChild(option);
-            });
-
-            // Alben im Container anzeigen
-            albumsContainer.innerHTML = ""; // Alben vorher leeren
-            albums.forEach((album, index) => {
-                const albumDiv = document.createElement("div");
-                albumDiv.classList.add("album");
-
-                const albumHeader = document.createElement("h3");
-                albumHeader.textContent = album.name;
-
-                const photosDiv = document.createElement("div");
-                photosDiv.classList.add("photos");
-
-                album.photos.forEach(photo => {
-                    const photoDiv = document.createElement("div");
-                    photoDiv.classList.add("photo");
-                    const img = document.createElement("img");
-                    img.src = photo;
-                    photoDiv.appendChild(img);
-                    photosDiv.appendChild(photoDiv);
-                });
-
-                albumDiv.appendChild(albumHeader);
-                albumDiv.appendChild(photosDiv);
-                albumsContainer.appendChild(albumDiv);
-            });
-        }
-
-        // Funktion, um Bilder hochzuladen
-        uploadButton.addEventListener("click", () => {
-            const files = fileInput.files;
-            if (files.length === 0) {
-                alert("Bitte wähle mindestens ein Bild aus.");
-                return;
-            }
-
-            // Bilder speichern (vorläufig, bis sie einem Album zugewiesen werden)
-            Array.from(files).forEach(file => {
-                const reader = new FileReader();
-                reader.onload = (e) => {
-                    uploadedPhotos.push(e.target.result);
-                };
-                reader.readAsDataURL(file);
-            });
-
-            // Nach dem Hochladen der Bilder wird das Formular zum Verschieben der Bilder angezeigt
-            moveForm.style.display = "block";
-        });
-
-        // Funktion, um Bilder in ein Album zu verschieben
-        moveButton.addEventListener("click", () => {
-            const albumIndex = albumSelect.value;
-            if (albumIndex === null) {
-                alert("Bitte wähle ein Album.");
-                return;
-            }
-
-            // Bilder in das ausgewählte Album verschieben
-            albums[albumIndex].photos.push(...uploadedPhotos);
-
-            // Bilderliste zurücksetzen
-            uploadedPhotos = [];
-            moveForm.style.display = "none";
-            updateAlbums();
-        });
-
-    </script>
+    <footer>
+        <p>&copy; 2024 Klare Politik. Alle Rechte vorbehalten.</p>
+    </footer>
 </body>
 </html>
