@@ -1,0 +1,95 @@
+/* Allgemeine Stile */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+}
+
+header {
+    background: #2E4A62;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header p {
+    margin: 0.5rem 0 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0 0;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#hero {
+    background: #F4F4F9;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+#hero h2 {
+    margin: 0 0 1rem;
+}
+
+.button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: #2E4A62;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.button:hover {
+    background: #1C2F41;
+}
+
+section {
+    padding: 2rem 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#topics .topics-grid {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.topic {
+    background: #F4F4F9;
+    padding: 1rem;
+    border-radius: 5px;
+    width: 250px;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #2E4A62;
+    color: #fff;
+    margin-top: 2rem;
+}
